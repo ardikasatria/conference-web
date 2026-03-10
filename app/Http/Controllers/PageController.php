@@ -15,4 +15,29 @@ class PageController extends Controller
     {
         return Inertia::render('Home');
     }
+
+    public function committee(): Response
+    {
+        return Inertia::render('Committee');
+    }
+
+    public function schedule(): Response
+    {
+        return Inertia::render('Schedule');
+    }
+
+    public function information(): Response
+    {
+        return Inertia::render('FaqPage');
+    }
+
+    public function program(): Response
+    {
+        return Inertia::render('Program');
+    }
+
+    public function author(): Response
+    {
+        return Inertia::render('Author');
+    }
 }

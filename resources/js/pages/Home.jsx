@@ -34,8 +34,8 @@ export default function Home() {
       <Countdown />
       <Venue />
       <Trip />
-      <Contact />
       <Faq />
+      <Contact />
       <Footer />
     </>
   );
