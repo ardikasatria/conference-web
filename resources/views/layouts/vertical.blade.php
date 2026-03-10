@@ -4,7 +4,11 @@
 <head>
     @include('layouts.partials/title-meta')
 
-    @include('layouts.partials/head-css')
+    @yield('css')
+
+    <!-- Adminto Admin Theme CSS (pre-built) -->
+    <link href="/build/assets/app-BuwIqzw9.css" rel="stylesheet">
+    <link href="/build/assets/icons-r6laq6CU.css" rel="stylesheet">
 </head>
 
 <body>
@@ -30,7 +34,13 @@
 
     @include('layouts.partials/customizer')
 
-    @include('layouts.partials/footer-scripts')
+    <!-- Adminto Theme Config -->
+    <script src="/build/assets/config-LSYrJu-Q.js"></script>
+
+    <!-- Adminto App JS -->
+    <script src="/build/assets/app-C5utzVIa.js"></script>
+
+    @yield('scripts')
 
 </body>
 

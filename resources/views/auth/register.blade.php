@@ -40,7 +40,7 @@
                         </div>
                     </form>
                     <p class="text-nuted fs-14 mb-0">Already have an account? <a class="fw-semibold text-danger ms-1"
-                            href="{{ route ('second' , ['auth','login']) }}">Login !</a></p>
+                            href=""#"">Login !</a></p>
                 </div>
                 <p class="mt-4 text-center mb-0">
                     <script>

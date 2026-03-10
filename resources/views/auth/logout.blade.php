@@ -30,7 +30,7 @@
                         <button class="btn btn-primary fw-semibold" type="submit">Support Center</button>
                     </div>
                     <p class="text-muted fs-14 mt-3 mb-0">
-                        Back to <a class="text-danger fw-semibold ms-1" href="{{ route ('second' , ['auth','login']) }}">Login !</a>
+                        Back to <a class="text-danger fw-semibold ms-1" href=""#"">Login !</a>
                     </p>
                 </div>
                 <p class="mt-4 text-center mb-0">

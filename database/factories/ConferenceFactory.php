@@ -28,7 +28,7 @@ class ConferenceFactory extends Factory
             'end_date' => $this->faker->dateTimeBetween('+2 months', '+3 months'),
             'location' => $this->faker->city . ', ' . $this->faker->state,
             'image' => $this->faker->imageUrl(640, 480, 'conference', true),
-            'slug' => str_slug($name),
+            'slug' => \Illuminate\Support\Str::slug($name),
             'status' => $this->faker->randomElement(['draft', 'published', 'ongoing', 'completed']),
             'capacity' => $this->faker->numberBetween(100, 1000),
             'registration_fee' => $this->faker->numberBetween(0, 500),

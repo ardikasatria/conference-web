@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('session_speaker', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('session_id')->constrained('sessions')->onDelete('cascade');
+            $table->foreignId('session_id')->constrained('conference_sessions')->onDelete('cascade');
             $table->foreignId('speaker_id')->constrained('speakers')->onDelete('cascade');
             $table->boolean('is_moderator')->default(false);
             $table->integer('order')->default(0);

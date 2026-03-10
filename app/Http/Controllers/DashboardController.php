@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Inertia\Inertia;
-use Inertia\Response;
+use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 
 /**
@@ -17,40 +16,55 @@ class DashboardController extends Controller
     /**
      * Route to the appropriate dashboard based on user role.
      */
-    public function index(Request $request): Response|RedirectResponse
+    public function index(Request $request): RedirectResponse
     {
         $user = Auth::user();
-        $conferenceId = $request->query('conference') ?? session('current_conference_id');
-        $roles = $user->rolesInConference($conferenceId);
 
-        if (in_array('admin', $roles)) {
+        // Check global admin role first (assigned without conference_id)
+        if ($user->hasRole('admin')) {
             return redirect()->route('dashboard.admin');
         }
 
-        if (in_array('reviewer', $roles)) {
+        // Then check conference-scoped roles
+        $conferenceId = $request->query('conference') ?? session('current_conference_id');
+
+        if ($conferenceId) {
+            $roles = $user->rolesInConference($conferenceId);
+
+            if (in_array('reviewer', $roles)) {
+                return redirect()->route('dashboard.reviewer');
+            }
+
+            if (in_array('participant', $roles)) {
+                return redirect()->route('dashboard.participant');
+            }
+        }
+
+        // Fallback: check if user has any global role
+        if ($user->hasRole('reviewer')) {
             return redirect()->route('dashboard.reviewer');
         }
 
-        if (in_array('participant', $roles)) {
+        if ($user->hasRole('participant')) {
             return redirect()->route('dashboard.participant');
         }
 
-        return redirect()->route('home')
-            ->with('message', 'You do not have access to the dashboard.');
+        // Default: send to participant dashboard as safe fallback
+        return redirect()->route('dashboard.participant');
     }
 
-    public function admin(): Response
+    public function admin(): View
     {
-        return Inertia::render('Dashboard/Admin');
+        return view('dashboard.admin');
     }
 
-    public function participant(): Response
+    public function participant(): View
     {
-        return Inertia::render('Dashboard/Participant');
+        return view('dashboard.participant');
     }
 
-    public function reviewer(): Response
+    public function reviewer(): View
     {
-        return Inertia::render('Dashboard/Reviewer');
+        return view('dashboard.reviewer');
     }
 }

@@ -27,7 +27,6 @@ Route::middleware('auth')->group(function () {
         ->name('dashboard.admin');
 
     Route::get('/dashboard/participant', [DashboardController::class, 'participant'])
-        ->middleware('role:participant')
         ->name('dashboard.participant');
 
     Route::get('/dashboard/reviewer', [DashboardController::class, 'reviewer'])

@@ -4,7 +4,7 @@
         <div class="d-flex align-items-center gap-2">
 
             <!-- Brand Logo -->
-            <a href="{{ route('any', ['index'])}}" class="logo">
+            <a href=""#"" class="logo">
                 <span class="logo-light">
                     <span class="logo-lg"><img src="/images/logo.png" alt="logo"></span>
                     <span class="logo-sm"><img src="/images/logo-sm.png" alt="small logo"></span>
