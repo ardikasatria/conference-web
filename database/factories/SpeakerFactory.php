@@ -29,7 +29,7 @@ class SpeakerFactory extends Factory
             'position' => $this->faker->jobTitle,
             'website' => $this->faker->url,
             'twitter' => '@' . $this->faker->userName,
-            'linkedin' => 'linkedin.com/in/' . str_slug($this->faker->name),
+            'linkedin' => 'linkedin.com/in/' . \Illuminate\Support\Str::slug($this->faker->name),
             'status' => 'active',
         ];
     }

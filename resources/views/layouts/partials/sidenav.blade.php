@@ -2,7 +2,7 @@
 <div class="sidenav-menu">
 
     <!-- Brand Logo -->
-    <a href="{{ route('any', ['index'])}}" class="logo">
+    <a href=""#"" class="logo">
         <span class="logo-light">
             <span class="logo-lg"><img src="/images/logo.png" alt="logo"></span>
             <span class="logo-sm"><img src="/images/logo-sm.png" alt="small logo"></span>
@@ -96,7 +96,7 @@
         <!--- Sidenav Menu -->
         <ul class="side-nav">
             <li class="side-nav-item">
-                <a href="{{ route('any', ['index'])}}" class="side-nav-link">
+                <a href=""#"" class="side-nav-link">
                     <span class="menu-icon"><i class="ti ti-dashboard"></i></span>
                     <span class="menu-text"> Dashboard </span>
                     <span class="badge bg-danger rounded-pill">9+</span>
@@ -104,14 +104,14 @@
             </li>
 
             <li class="side-nav-item">
-                <a href="{{ route('second', ['apps', 'chat'])}}" class="side-nav-link">
+                <a href=""#"" class="side-nav-link">
                     <span class="menu-icon"><i class="ti ti-message"></i></span>
                     <span class="menu-text"> Chat </span>
                 </a>
             </li>
 
             <li class="side-nav-item">
-                <a href="{{ route('second', ['apps', 'calendar'])}}" class="side-nav-link">
+                <a href=""#"" class="side-nav-link">
                     <span class="menu-icon"><i class="ti ti-calendar"></i></span>
                     <span class="menu-text"> Calendar </span>
                 </a>
@@ -127,12 +127,12 @@
                 <div class="collapse" id="sidebarContacts">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['apps', 'user-contacts'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Contacts</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['apps', 'user-profile'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Profile</span>
                             </a>
                         </li>
@@ -141,21 +141,21 @@
             </li>
 
             <li class="side-nav-item">
-                <a href="{{ route('second', ['apps', 'email'])}}" class="side-nav-link">
+                <a href=""#"" class="side-nav-link">
                     <span class="menu-icon"><i class="ti ti-mailbox"></i></span>
                     <span class="menu-text"> Email </span>
                 </a>
             </li>
 
             <li class="side-nav-item">
-                <a href="{{ route('second', ['apps', 'file-manager'])}}" class="side-nav-link">
+                <a href=""#"" class="side-nav-link">
                     <span class="menu-icon"><i class="ti ti-folders"></i></span>
                     <span class="menu-text"> File Manager </span>
                 </a>
             </li>
 
             <li class="side-nav-item">
-                <a href="{{ route('second', ['apps', 'projects'])}}" class="side-nav-link">
+                <a href=""#"" class="side-nav-link">
                     <span class="menu-icon"><i class="ti ti-briefcase"></i></span>
                     <span class="menu-text"> Projects </span>
                 </a>
@@ -171,12 +171,12 @@
                 <div class="collapse" id="sidebarTasks">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['apps', 'kanban'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Kanban</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['apps', 'task-details'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">View Details</span>
                             </a>
                         </li>
@@ -194,17 +194,17 @@
                 <div class="collapse" id="sidebarInvoice">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['apps', 'invoices'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Invoices</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['apps', 'invoice-details'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">View Invoice</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['apps', 'invoice-create'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Create Invoice</span>
                             </a>
                         </li>
@@ -226,32 +226,32 @@
                 <div class="collapse" id="sidebarPages">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['pages', 'starter'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Starter Page</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['pages', 'pricing'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Pricing</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['pages', 'faq'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">FAQ</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['pages', 'maintenance'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Maintenance</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['pages', 'timeline'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Timeline</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['pages', 'coming-soon'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Coming Soon</span>
                             </a>
                         </li>
@@ -269,42 +269,42 @@
                 <div class="collapse" id="sidebarPagesAuth">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="{{ route ('second' , ['auth','login']) }}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Login</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['auth', 'register'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Register</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['auth', 'logout'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Logout</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['auth', 'recoverpw'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Recover Password</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['auth', 'createpw'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Create Password</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['auth', 'lock-screen'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Lock Screen</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['auth', 'confirm-mail'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Confirm Mail</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['auth', 'login-pin'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Login with PIN</span>
                             </a>
                         </li>
@@ -322,37 +322,37 @@
                 <div class="collapse" id="sidebarPagesError">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['error', '401'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">401 Unauthorized</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['error', '400'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">400 Bad Request</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['error', '403'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">403 Forbidden</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['error', '404'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">404 Not Found</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['error', '500'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">500 Internal Server</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['error', 'service-unavailable'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Service Unavailable</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['error', '404-alt'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Error 404 Alt</span>
                             </a>
                         </li>
@@ -361,7 +361,7 @@
             </li>
 
             <li class="side-nav-item">
-                <a href="{{ route('second', ['widgets', 'index'])}}" class="side-nav-link">
+                <a href=""#"" class="side-nav-link">
                     <span class="menu-icon"><i class="ti ti-layout-dashboard"></i></span>
                     <span class="menu-text"> Widgets </span>
                 </a>
@@ -379,137 +379,137 @@
                 <div class="collapse" id="sidebarBaseUI">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'accordions'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Accordions</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'alerts'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Alerts</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'avatars'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Avatars</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'badges'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Badges</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'breadcrumb'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Breadcrumb</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'buttons'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Buttons</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'cards'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Cards</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'carousel'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Carousel</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'collapse'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Collapse</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'dropdowns'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Dropdowns</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'ratios'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Ratios</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'grid'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Grid</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'links'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Links</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'list-group'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">List Group</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'modals'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Modals</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'notifications'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Notifications</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'offcanvas'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Offcanvas</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'placeholders'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Placeholders</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'pagination'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Pagination</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'popovers'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Popovers</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'progress'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Progress</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'scrollspy'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Scrollspy</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'spinners'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Spinners</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'tabs'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Tabs</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'tooltips'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Tooltips</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'typography'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Typography</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['ui', 'utilities'])}}"  class="side-nav-link">
+                            <a href=""#""  class="side-nav-link">
                                 <span class="menu-text">Utilities</span>
                             </a>
                         </li>
@@ -527,22 +527,22 @@
                 <div class="collapse" id="sidebarExtendedUI">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['extended-ui', 'dragula'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Dragula</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route ('second' , ['extended-ui','sweetalerts']) }}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Sweet Alerts</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route ('second' , ['extended-ui','ratings']) }}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Ratings</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route ('second' , ['extended-ui','scrollbar']) }}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Scrollbar</span>
                             </a>
                         </li>
@@ -560,17 +560,17 @@
                 <div class="collapse" id="sidebarIcons">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['icons', 'remix'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Remix</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['icons', 'tabler'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Tabler</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['icons', 'solar'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Solar</span>
                             </a>
                         </li>
@@ -588,97 +588,97 @@
                 <div class="collapse" id="sidebarCharts">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['charts', 'area'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Area</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['charts', 'bar'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Bar</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['charts', 'bubble'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Bubble</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['charts', 'candlestick'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Candlestick</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['charts', 'column'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Column</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['charts', 'heatmap'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Heatmap</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['charts', 'line'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Line</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['charts', 'mixed'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Mixed</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['charts', 'timeline'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Timeline</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['charts', 'boxplot'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Boxplot</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['charts', 'treemap'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Treemap</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['charts', 'pie'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Pie</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['charts', 'radar'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Radar</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['charts', 'radialbar'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">RadialBar</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['charts', 'scatter'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Scatter</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['charts', 'polar-area'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Polar Area</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['charts', 'sparklines'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Sparklines</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['charts', 'slope'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Slope</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['charts', 'funnel'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Funnel</span>
                             </a>
                         </li>
@@ -696,52 +696,52 @@
                 <div class="collapse" id="sidebarForms">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['form', 'elements'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Basic Elements</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['form', 'inputmask'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Inputmask</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['form', 'picker'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Picker</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['form', 'select'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Select</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['form', 'range-slider'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Range Slider</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['form', 'validation'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Validation</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['form', 'wizard'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Wizard</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['form', 'fileuploads'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">File Uploads</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['form', 'editors'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Editors</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['form','layouts'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Layouts</span>
                             </a>
                         </li>
@@ -759,17 +759,17 @@
                 <div class="collapse" id="sidebarTables">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['tables', 'basic'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Basic Tables</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['tables', 'gridjs'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Gridjs Tables</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['tables', 'datatable'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Datatable Tables</span>
                             </a>
                         </li>
@@ -787,17 +787,17 @@
                 <div class="collapse" id="sidebarMaps">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['maps', 'google'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Google Maps</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['maps', 'vector'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Vector Maps</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['maps', 'leaflet'])}}" class="side-nav-link">
+                            <a href=""#"" class="side-nav-link">
                                 <span class="menu-text">Leaflet Maps</span>
                             </a>
                         </li>
@@ -819,25 +819,25 @@
                 <div class="collapse" id="sidebarLayouts">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['layouts-eg', 'horizontal'])}}" target="_blank" class="side-nav-link">Horizontal</a>
+                            <a href=""#"" target="_blank" class="side-nav-link">Horizontal</a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['layouts-eg', 'detached'])}}" target="_blank" class="side-nav-link">Detached</a>
+                            <a href=""#"" target="_blank" class="side-nav-link">Detached</a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['layouts-eg', 'full'])}}" target="_blank" class="side-nav-link">Full View</a>
+                            <a href=""#"" target="_blank" class="side-nav-link">Full View</a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['layouts-eg', 'fullscreen'])}}" target="_blank" class="side-nav-link">Fullscreen View</a>
+                            <a href=""#"" target="_blank" class="side-nav-link">Fullscreen View</a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['layouts-eg', 'hover'])}}" target="_blank" class="side-nav-link">Hover Menu</a>
+                            <a href=""#"" target="_blank" class="side-nav-link">Hover Menu</a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['layouts-eg', 'compact'])}}" target="_blank" class="side-nav-link">Compact</a>
+                            <a href=""#"" target="_blank" class="side-nav-link">Compact</a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="{{ route('second', ['layouts-eg', 'icon-view'])}}"  target="_blank" class="side-nav-link">Icon View</a>
+                            <a href=""#""  target="_blank" class="side-nav-link">Icon View</a>
                         </li>
                     </ul>
                 </div>

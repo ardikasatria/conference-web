@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>ICSSF 2024 - International Conference on Sustainability of Sciences for the Future</title>
+        <title>ICSSF 2026 - International Conference on Sustainability of Sciences for the Future</title>
         <meta name="description" content="1st International Conference on Sustainability of Sciences for the Future" />
       </Head>
 

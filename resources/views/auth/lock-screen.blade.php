@@ -30,7 +30,7 @@
                         </div>
                     </form>
                     <p class="text-muted fs-14 mb-0">
-                        Not you? return <a class="fw-semibold text-danger ms-1" href="{{ route ('second' , ['auth','login']) }}">Login !</a>
+                        Not you? return <a class="fw-semibold text-danger ms-1" href=""#"">Login !</a>
                     </p>
                 </div>
                 <p class="mt-3 text-center mb-0">

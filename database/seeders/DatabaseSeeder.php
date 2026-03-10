@@ -33,20 +33,21 @@ class DatabaseSeeder extends Seeder
             'description' => 'Content/paper reviewer',
         ]);
 
-        // Create test users
+        // Create test users (DO NOT use bcrypt() — the User model's 'hashed' cast handles it)
         $testUser = User::factory()->create([
             'name' => 'Test Participant',
             'email' => 'participant@example.com',
-            'password' => bcrypt('password'),
+            'password' => 'password',
         ]);
 
         $adminUser = User::factory()->create([
             'name' => 'Test Admin',
             'email' => 'admin@example.com',
-            'password' => bcrypt('password'),
+            'password' => 'password',
         ]);
 
-        // Assign global admin role
+        // Assign global roles
+        $testUser->assignRole($participantRole);
         $adminUser->assignRole($adminRole);
 
         // Run conference seeder (which will assign roles)

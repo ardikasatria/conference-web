@@ -4,55 +4,66 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
 
+/**
+ * Handles dashboard routing based on user roles.
+ * Single Responsibility: role-based dashboard page rendering.
+ */
 class DashboardController extends Controller
 {
     /**
-     * Show the appropriate dashboard based on user role
+     * Route to the appropriate dashboard based on user role.
      */
-    public function index(Request $request)
+    public function index(Request $request): RedirectResponse
     {
         $user = Auth::user();
-        
-        // Get the current conference (could be passed as parameter)
-        $conferenceId = $request->query('conference') ?? session('current_conference_id');
-        
-        // Get user's roles in the conference
-        $roles = $user->rolesInConference($conferenceId);
 
-        // Redirect based on role - admin takes priority
-        if (in_array('admin', $roles)) {
-            return $this->showAdminDashboard();
-        } elseif (in_array('reviewer', $roles)) {
-            return $this->showReviewerDashboard();
-        } elseif (in_array('participant', $roles)) {
-            return $this->showParticipantDashboard();
+        // Check global admin role first (assigned without conference_id)
+        if ($user->hasRole('admin')) {
+            return redirect()->route('dashboard.admin');
         }
 
-        // If no suitable role found
-        return redirect('/')->with('message', 'You do not have access to the dashboard.');
+        // Then check conference-scoped roles
+        $conferenceId = $request->query('conference') ?? session('current_conference_id');
+
+        if ($conferenceId) {
+            $roles = $user->rolesInConference($conferenceId);
+
+            if (in_array('reviewer', $roles)) {
+                return redirect()->route('dashboard.reviewer');
+            }
+
+            if (in_array('participant', $roles)) {
+                return redirect()->route('dashboard.participant');
+            }
+        }
+
+        // Fallback: check if user has any global role
+        if ($user->hasRole('reviewer')) {
+            return redirect()->route('dashboard.reviewer');
+        }
+
+        if ($user->hasRole('participant')) {
+            return redirect()->route('dashboard.participant');
+        }
+
+        // Default: send to participant dashboard as safe fallback
+        return redirect()->route('dashboard.participant');
     }
 
-    /**
-     * Show admin dashboard
-     */
-    public function showAdminDashboard()
+    public function admin(): View
     {
         return view('dashboard.admin');
     }
 
-    /**
-     * Show participant dashboard
-     */
-    public function showParticipantDashboard()
+    public function participant(): View
     {
         return view('dashboard.participant');
     }
 
-    /**
-     * Show reviewer dashboard
-     */
-    public function showReviewerDashboard()
+    public function reviewer(): View
     {
         return view('dashboard.reviewer');
     }
