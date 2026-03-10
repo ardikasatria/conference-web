@@ -6,84 +6,96 @@
         <h1 class="mb-sm-0">Admin Dashboard</h1>
         <div class="page-title-right">
             <ol class="breadcrumb m-0">
-                <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active">Admin</li>
             </ol>
         </div>
     </div>
 
-    <!-- Statistics Row -->
+    {{-- Conference Info Banner --}}
+    @if($conference)
+    <div class="alert alert-primary d-flex align-items-center mb-3" role="alert">
+        <i class="ri-calendar-event-line fs-4 me-2"></i>
+        <div>
+            <strong>{{ $conference->name }}</strong>
+            @if($conference->start_date && $conference->end_date)
+                &mdash; {{ $conference->start_date->format('M d') }} - {{ $conference->end_date->format('M d, Y') }}
+            @endif
+            @if($conference->location)
+                | {{ $conference->location }}
+            @endif
+        </div>
+    </div>
+    @endif
+
+    {{-- Statistics Cards --}}
     <div class="row row-cols-xxl-4 row-cols-md-2 row-cols-1">
-        <!-- Total Registrations -->
         <div class="col">
             <div class="card">
-                <div class="d-flex card-header justify-content-between align-items-center">
-                    <div>
-                        <h4 class="header-title">Total Registrations</h4>
-                    </div>
-                </div>
-                <div class="card-body pt-0">
-                    <div class="d-flex align-items-end gap-2 justify-content-between">
-                        <div>
-                            <h3 class="fw-semibold">1,245</h3>
-                            <p class="text-muted mb-0">Active participants</p>
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="avatar-sm bg-primary bg-opacity-10 rounded flex-shrink-0">
+                            <span class="avatar-title text-primary rounded">
+                                <i class="ri-user-add-line fs-4"></i>
+                            </span>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h3 class="fw-semibold mb-0">{{ number_format($totalRegistrations) }}</h3>
+                            <p class="text-muted mb-0">Total Registrations</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Total Submissions -->
         <div class="col">
             <div class="card">
-                <div class="d-flex card-header justify-content-between align-items-center">
-                    <div>
-                        <h4 class="header-title">Total Submissions</h4>
-                    </div>
-                </div>
-                <div class="card-body pt-0">
-                    <div class="d-flex align-items-end gap-2 justify-content-between">
-                        <div>
-                            <h3 class="fw-semibold">487</h3>
-                            <p class="text-muted mb-0">Papers submitted</p>
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="avatar-sm bg-info bg-opacity-10 rounded flex-shrink-0">
+                            <span class="avatar-title text-info rounded">
+                                <i class="ri-file-text-line fs-4"></i>
+                            </span>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h3 class="fw-semibold mb-0">{{ number_format($totalSubmissions) }}</h3>
+                            <p class="text-muted mb-0">Total Submissions</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Pending Reviews -->
         <div class="col">
             <div class="card">
-                <div class="d-flex card-header justify-content-between align-items-center">
-                    <div>
-                        <h4 class="header-title">Pending Reviews</h4>
-                    </div>
-                </div>
-                <div class="card-body pt-0">
-                    <div class="d-flex align-items-end gap-2 justify-content-between">
-                        <div>
-                            <h3 class="fw-semibold">124</h3>
-                            <p class="text-muted mb-0">Awaiting review</p>
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="avatar-sm bg-warning bg-opacity-10 rounded flex-shrink-0">
+                            <span class="avatar-title text-warning rounded">
+                                <i class="ri-time-line fs-4"></i>
+                            </span>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h3 class="fw-semibold mb-0">{{ number_format($pendingReviews) }}</h3>
+                            <p class="text-muted mb-0">Pending Reviews</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Total Revenue -->
         <div class="col">
             <div class="card">
-                <div class="d-flex card-header justify-content-between align-items-center">
-                    <div>
-                        <h4 class="header-title">Total Revenue</h4>
-                    </div>
-                </div>
-                <div class="card-body pt-0">
-                    <div class="d-flex align-items-end gap-2 justify-content-between">
-                        <div>
-                            <h3 class="fw-semibold">$62,450</h3>
-                            <p class="text-muted mb-0">From registrations</p>
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="avatar-sm bg-success bg-opacity-10 rounded flex-shrink-0">
+                            <span class="avatar-title text-success rounded">
+                                <i class="ri-money-dollar-circle-line fs-4"></i>
+                            </span>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h3 class="fw-semibold mb-0">${{ number_format($totalRevenue, 2) }}</h3>
+                            <p class="text-muted mb-0">Total Revenue</p>
                         </div>
                     </div>
                 </div>
@@ -91,85 +103,185 @@
         </div>
     </div>
 
-    <!-- Management Sections -->
+    {{-- Secondary Stats --}}
+    <div class="row row-cols-xxl-3 row-cols-md-3 row-cols-1">
+        <div class="col">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 class="fw-semibold text-primary mb-1">{{ number_format($totalUsers) }}</h4>
+                    <p class="text-muted mb-0"><i class="ri-group-line me-1"></i>Total Users</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 class="fw-semibold text-info mb-1">{{ number_format($totalReviewers) }}</h4>
+                    <p class="text-muted mb-0"><i class="ri-user-star-line me-1"></i>Active Reviewers</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4 class="fw-semibold text-warning mb-1">{{ number_format($pendingApplications) }}</h4>
+                    <p class="text-muted mb-0"><i class="ri-file-user-line me-1"></i>Pending Reviewer Apps</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Tables Row --}}
     <div class="row">
+        {{-- Recent Registrations --}}
         <div class="col-lg-6">
             <div class="card">
-                <div class="card-header">
-                    <h4 class="header-title">Recent Registrations</h4>
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h4 class="header-title mb-0">Recent Registrations</h4>
+                    <span class="badge bg-primary">{{ $totalRegistrations }} total</span>
                 </div>
                 <div class="card-body">
+                    @if($recentRegistrations->isEmpty())
+                        <div class="text-center text-muted py-4">
+                            <i class="ri-inbox-line fs-2 d-block mb-2"></i>
+                            No registrations yet.
+                        </div>
+                    @else
                     <div class="table-responsive">
-                        <table class="table table-hover mb-0">
+                        <table class="table table-hover table-sm mb-0">
                             <thead class="table-light">
                                 <tr>
                                     <th>Name</th>
-                                    <th>Email</th>
                                     <th>Status</th>
                                     <th>Date</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($recentRegistrations as $reg)
                                 <tr>
-                                    <td>John Doe</td>
-                                    <td>john@example.com</td>
-                                    <td><span class="badge bg-success">Confirmed</span></td>
-                                    <td>2026-03-08</td>
+                                    <td>
+                                        <strong>{{ $reg->user->name ?? 'N/A' }}</strong>
+                                        <br><small class="text-muted">{{ $reg->user->email ?? '' }}</small>
+                                    </td>
+                                    <td>
+                                        @switch($reg->status)
+                                            @case('confirmed')
+                                                <span class="badge bg-success">Confirmed</span>
+                                                @break
+                                            @case('pending')
+                                                <span class="badge bg-warning">Pending</span>
+                                                @break
+                                            @case('cancelled')
+                                                <span class="badge bg-danger">Cancelled</span>
+                                                @break
+                                            @default
+                                                <span class="badge bg-secondary">{{ ucfirst($reg->status ?? 'unknown') }}</span>
+                                        @endswitch
+                                    </td>
+                                    <td><small>{{ $reg->created_at?->format('M d, Y') }}</small></td>
                                 </tr>
-                                <tr>
-                                    <td>Jane Smith</td>
-                                    <td>jane@example.com</td>
-                                    <td><span class="badge bg-warning">Pending</span></td>
-                                    <td>2026-03-07</td>
-                                </tr>
-                                <tr>
-                                    <td>Bob Johnson</td>
-                                    <td>bob@example.com</td>
-                                    <td><span class="badge bg-success">Confirmed</span></td>
-                                    <td>2026-03-06</td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
 
+        {{-- Recent Submissions --}}
         <div class="col-lg-6">
             <div class="card">
-                <div class="card-header">
-                    <h4 class="header-title">Recent Submissions</h4>
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h4 class="header-title mb-0">Recent Submissions</h4>
+                    <span class="badge bg-info">{{ $totalSubmissions }} total</span>
                 </div>
                 <div class="card-body">
+                    @if($recentSubmissions->isEmpty())
+                        <div class="text-center text-muted py-4">
+                            <i class="ri-inbox-line fs-2 d-block mb-2"></i>
+                            No submissions yet.
+                        </div>
+                    @else
                     <div class="table-responsive">
-                        <table class="table table-hover mb-0">
+                        <table class="table table-hover table-sm mb-0">
                             <thead class="table-light">
                                 <tr>
                                     <th>Title</th>
                                     <th>Author</th>
                                     <th>Status</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($recentSubmissions as $sub)
                                 <tr>
-                                    <td>AI in Healthcare</td>
-                                    <td>Dr. Smith</td>
-                                    <td><span class="badge bg-info">Under Review</span></td>
-                                    <td><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
+                                    <td>
+                                        <strong>{{ Str::limit($sub->title, 30) }}</strong>
+                                    </td>
+                                    <td>{{ $sub->user->name ?? $sub->presenter_name ?? 'N/A' }}</td>
+                                    <td>
+                                        @switch($sub->status)
+                                            @case('submitted')
+                                                <span class="badge bg-info">Submitted</span>
+                                                @break
+                                            @case('approved')
+                                                <span class="badge bg-success">Approved</span>
+                                                @break
+                                            @case('rejected')
+                                                <span class="badge bg-danger">Rejected</span>
+                                                @break
+                                            @case('draft')
+                                                <span class="badge bg-secondary">Draft</span>
+                                                @break
+                                            @default
+                                                <span class="badge bg-secondary">{{ ucfirst($sub->status ?? 'unknown') }}</span>
+                                        @endswitch
+                                    </td>
                                 </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Pending Reviewer Applications --}}
+    @if($pendingReviewerApps->isNotEmpty())
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h4 class="header-title mb-0">
+                        <i class="ri-user-star-line me-1"></i>Pending Reviewer Applications
+                    </h4>
+                    <span class="badge bg-warning">{{ $pendingApplications }} pending</span>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-sm mb-0">
+                            <thead class="table-light">
                                 <tr>
-                                    <td>Climate Science</td>
-                                    <td>Prof. Johnson</td>
-                                    <td><span class="badge bg-success">Accepted</span></td>
-                                    <td><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
+                                    <th>Applicant</th>
+                                    <th>Conference</th>
+                                    <th>Field of Study</th>
+                                    <th>Applied</th>
                                 </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($pendingReviewerApps as $app)
                                 <tr>
-                                    <td>Renewable Energy</td>
-                                    <td>Dr. Brown</td>
-                                    <td><span class="badge bg-danger">Rejected</span></td>
-                                    <td><a href="#" class="btn btn-sm btn-outline-primary">View</a></td>
+                                    <td>
+                                        <strong>{{ $app->full_name_with_degree ?? $app->user->name ?? 'N/A' }}</strong>
+                                        <br><small class="text-muted">{{ $app->affiliation ?? '' }}</small>
+                                    </td>
+                                    <td>{{ $app->conference->name ?? 'N/A' }}</td>
+                                    <td>{{ $app->field_of_study ?? '-' }}</td>
+                                    <td><small>{{ $app->created_at?->format('M d, Y') }}</small></td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -177,22 +289,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Admin Tools -->
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="header-title">Admin Tools</h4>
-                </div>
-                <div class="card-body">
-                    <a href="#" class="btn btn-primary me-2">Manage Conferences</a>
-                    <a href="#" class="btn btn-info me-2">Manage Users</a>
-                    <a href="#" class="btn btn-warning me-2">Manage Reviewers</a>
-                    <a href="#" class="btn btn-secondary">Settings</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    @endif
 </div>
 @endsection
