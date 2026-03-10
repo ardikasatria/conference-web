@@ -257,34 +257,28 @@
             </div>
             @endif
 
-            {{-- Review Guidelines --}}
+            {{-- Review Guidelines / Grading Criteria --}}
             <div class="card">
                 <div class="card-header">
                     <h4 class="header-title mb-0">Review Guidelines</h4>
                 </div>
                 <div class="card-body">
+                    @if(isset($gradingCriteria) && $gradingCriteria->count())
                     <ul class="list-unstyled mb-0">
-                        <li class="mb-2">
+                        @foreach($gradingCriteria as $criteria)
+                        <li class="{{ !$loop->last ? 'mb-2' : '' }}">
                             <i class="ri-checkbox-circle-line text-success me-1"></i>
-                            <strong>Originality</strong> — Is the work original?
+                            <strong>{{ $criteria->name }}</strong>
+                            @if($criteria->description)
+                                — {{ $criteria->description }}
+                            @endif
+                            <span class="badge bg-soft-primary text-primary ms-1">Max: {{ $criteria->max_score }}</span>
                         </li>
-                        <li class="mb-2">
-                            <i class="ri-checkbox-circle-line text-success me-1"></i>
-                            <strong>Quality</strong> — Technical quality & methodology
-                        </li>
-                        <li class="mb-2">
-                            <i class="ri-checkbox-circle-line text-success me-1"></i>
-                            <strong>Relevance</strong> — Relevant to conference topics
-                        </li>
-                        <li class="mb-2">
-                            <i class="ri-checkbox-circle-line text-success me-1"></i>
-                            <strong>Clarity</strong> — Writing & presentation quality
-                        </li>
-                        <li>
-                            <i class="ri-checkbox-circle-line text-success me-1"></i>
-                            <strong>Significance</strong> — Contribution to the field
-                        </li>
+                        @endforeach
                     </ul>
+                    @else
+                    <p class="text-muted mb-0">No grading criteria have been defined yet.</p>
+                    @endif
                 </div>
             </div>
         </div>

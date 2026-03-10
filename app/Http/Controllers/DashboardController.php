@@ -13,6 +13,7 @@ use App\Models\Submission;
 use App\Models\PaperReview;
 use App\Models\Payment;
 use App\Models\ReviewerApplication;
+use App\Models\GradingCriteria;
 use App\Models\User;
 
 /**
@@ -204,6 +205,11 @@ class DashboardController extends Controller
         // Active conference
         $conference = Conference::latest('start_date')->first();
 
+        // Grading criteria for the active conference
+        $gradingCriteria = $conference
+            ? GradingCriteria::where('conference_id', $conference->id)->orderBy('order')->get()
+            : collect();
+
         // Next deadline (closest review with pending status)
         $nextDeadline = null;
         if ($conference && $conference->end_date) {
@@ -221,6 +227,7 @@ class DashboardController extends Controller
             'reviewerApplication',
             'expertTopics',
             'conference',
+            'gradingCriteria',
             'nextDeadline'
         ));
     }

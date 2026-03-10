@@ -36,14 +36,17 @@
             <div class="dropdown-center text-center">
                 <a class="topbar-link dropdown-toggle text-reset drop-arrow-none px-2" data-bs-toggle="dropdown"
                     type="button" aria-haspopup="false" aria-expanded="false">
-                    <img src="/images/users/avatar-1.jpg" width="46" class="rounded-circle" alt="user-image">
+                    @php $sidenavUser = auth()->user(); @endphp
+                    <div class="rounded-circle d-inline-flex align-items-center justify-content-center bg-primary text-white" style="width:46px;height:46px;">
+                        <span class="fw-bold fs-18">{{ $sidenavUser ? strtoupper(substr($sidenavUser->name, 0, 2)) : 'U' }}</span>
+                    </div>
                     <span class="d-flex gap-1 sidenav-user-name my-2">
                         <span>
-                            <span class="mb-0 fw-semibold lh-base fs-15">{{ auth()->user()->name ?? 'User' }}</span>
+                            <span class="mb-0 fw-semibold lh-base fs-15">{{ $sidenavUser->name ?? 'User' }}</span>
                             <p class="my-0 fs-13 text-muted">
-                                @if(auth()->user()?->hasRole('admin'))
+                                @if($sidenavUser?->hasRole('admin'))
                                     Admin
-                                @elseif(auth()->user()?->hasRole('reviewer'))
+                                @elseif($sidenavUser?->hasRole('reviewer'))
                                     Reviewer
                                 @else
                                     Participant
@@ -57,9 +60,9 @@
                     <div class="dropdown-header noti-title">
                         <h6 class="text-overflow m-0">Welcome!</h6>
                     </div>
-                    <a href="javascript:void(0);" class="dropdown-item">
-                        <i class="ri-account-circle-line me-1 fs-16 align-middle"></i>
-                        <span class="align-middle">My Profile</span>
+                    <a href="{{ route('dashboard') }}" class="dropdown-item">
+                        <i class="ri-dashboard-line me-1 fs-16 align-middle"></i>
+                        <span class="align-middle">My Dashboard</span>
                     </a>
                     <div class="dropdown-divider"></div>
                     <form method="POST" action="{{ route('logout') }}">
@@ -107,22 +110,22 @@
                 <div class="collapse" id="sidebarConferences">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="javascript:void(0);" class="side-nav-link">
+                            <a href="{{ route('admin.conferences.index') }}" class="side-nav-link">
                                 <span class="menu-text">All Conferences</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="javascript:void(0);" class="side-nav-link">
+                            <a href="{{ route('admin.topics.index') }}" class="side-nav-link">
                                 <span class="menu-text">Topics</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="javascript:void(0);" class="side-nav-link">
+                            <a href="{{ route('admin.sessions.index') }}" class="side-nav-link">
                                 <span class="menu-text">Sessions</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="javascript:void(0);" class="side-nav-link">
+                            <a href="{{ route('admin.packages.index') }}" class="side-nav-link">
                                 <span class="menu-text">Packages</span>
                             </a>
                         </li>
@@ -140,12 +143,12 @@
                 <div class="collapse" id="sidebarUsers">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="javascript:void(0);" class="side-nav-link">
+                            <a href="{{ route('admin.users.index') }}" class="side-nav-link">
                                 <span class="menu-text">All Users</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="javascript:void(0);" class="side-nav-link">
+                            <a href="{{ route('admin.roles.index') }}" class="side-nav-link">
                                 <span class="menu-text">Roles</span>
                             </a>
                         </li>
@@ -163,12 +166,12 @@
                 <div class="collapse" id="sidebarRegistrations">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="javascript:void(0);" class="side-nav-link">
+                            <a href="{{ route('admin.registrations.index') }}" class="side-nav-link">
                                 <span class="menu-text">All Registrations</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="javascript:void(0);" class="side-nav-link">
+                            <a href="{{ route('admin.payments.index') }}" class="side-nav-link">
                                 <span class="menu-text">Payments</span>
                             </a>
                         </li>
@@ -186,12 +189,12 @@
                 <div class="collapse" id="sidebarSubmissions">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="javascript:void(0);" class="side-nav-link">
+                            <a href="{{ route('admin.submissions.index') }}" class="side-nav-link">
                                 <span class="menu-text">All Submissions</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="javascript:void(0);" class="side-nav-link">
+                            <a href="{{ route('admin.grading-criteria.index') }}" class="side-nav-link">
                                 <span class="menu-text">Grading Criteria</span>
                             </a>
                         </li>
@@ -209,12 +212,12 @@
                 <div class="collapse" id="sidebarReviewers">
                     <ul class="sub-menu">
                         <li class="side-nav-item">
-                            <a href="javascript:void(0);" class="side-nav-link">
+                            <a href="{{ route('admin.reviewer-applications.index') }}" class="side-nav-link">
                                 <span class="menu-text">Applications</span>
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="javascript:void(0);" class="side-nav-link">
+                            <a href="{{ route('admin.paper-reviews.index') }}" class="side-nav-link">
                                 <span class="menu-text">Paper Reviews</span>
                             </a>
                         </li>
@@ -223,7 +226,7 @@
             </li>
 
             <li class="side-nav-item">
-                <a href="javascript:void(0);" class="side-nav-link">
+                <a href="{{ route('admin.speakers.index') }}" class="side-nav-link">
                     <span class="menu-icon"><i class="ti ti-speakerphone"></i></span>
                     <span class="menu-text"> Speakers </span>
                 </a>
@@ -242,7 +245,7 @@
             </li>
 
             <li class="side-nav-item">
-                <a href="javascript:void(0);" class="side-nav-link">
+                <a href="{{ route('reviewer.assigned-papers') }}" class="side-nav-link">
                     <span class="menu-icon"><i class="ti ti-file-search"></i></span>
                     <span class="menu-text"> Assigned Papers </span>
                 </a>
@@ -261,21 +264,21 @@
             </li>
 
             <li class="side-nav-item">
-                <a href="javascript:void(0);" class="side-nav-link">
+                <a href="{{ route('participant.submissions.index') }}" class="side-nav-link">
                     <span class="menu-icon"><i class="ti ti-file-upload"></i></span>
                     <span class="menu-text"> My Submissions </span>
                 </a>
             </li>
 
             <li class="side-nav-item">
-                <a href="javascript:void(0);" class="side-nav-link">
+                <a href="{{ route('participant.payments.index') }}" class="side-nav-link">
                     <span class="menu-icon"><i class="ti ti-credit-card"></i></span>
                     <span class="menu-text"> My Payments </span>
                 </a>
             </li>
 
             <li class="side-nav-item">
-                <a href="javascript:void(0);" class="side-nav-link">
+                <a href="{{ route('participant.sessions.index') }}" class="side-nav-link">
                     <span class="menu-icon"><i class="ti ti-calendar"></i></span>
                     <span class="menu-text"> My Sessions </span>
                 </a>

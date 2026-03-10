@@ -4,11 +4,11 @@
     <div class="auth-bg d-flex min-vh-100">
         <div class="row g-0 justify-content-center w-100 m-xxl-5 px-xxl-4 m-3">
             <div class="col-xxl-3 col-lg-5 col-md-6">
-                <a class="auth-brand d-flex justify-content-center mb-2" href="/">
+                <a class="auth-brand d-flex justify-content-center mb-2" href="{{ route('home') }}">
                     <img alt="dark logo" class="logo-dark" height="26" src="/images/logo-dark.png" />
                     <img alt="logo light" class="logo-light" height="26" src="/images/logo.png" />
                 </a>
-                <p class="fw-semibold mb-4 text-center text-muted fs-15">Admin Panel Design by Coderthemes</p>
+                <p class="fw-semibold mb-4 text-center text-muted fs-15">ICSSF Conference Management System</p>
                 <div class="card overflow-hidden text-center p-xxl-4 p-3 mb-0">
                     <h4 class="fw-semibold mb-2 fs-18">You are Logged Out</h4>
                     <div class="text-center">
@@ -23,26 +23,19 @@
                                 </svg>
                             </div>
                         </div>
-                        <h3 class="mt-2">See you again !</h3>
-                        <p class="text-muted"> You are now successfully sign out. </p>
+                        <h3 class="mt-2">See you again!</h3>
+                        <p class="text-muted">You have been successfully signed out.</p>
                     </div>
-                    <div class="d-block mt-2">
-                        <button class="btn btn-primary fw-semibold" type="submit">Support Center</button>
+                    <div class="d-flex gap-2 mt-2 justify-content-center">
+                        <a href="{{ route('login') }}" class="btn btn-primary fw-semibold">Login Again</a>
+                        <a href="{{ route('home') }}" class="btn btn-outline-secondary fw-semibold">Go to Homepage</a>
                     </div>
-                    <p class="text-muted fs-14 mt-3 mb-0">
-                        Back to <a class="text-danger fw-semibold ms-1" href=""#"">Login !</a>
-                    </p>
                 </div>
                 <p class="mt-4 text-center mb-0">
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script> © Adminto - By <span
-                        class="fw-bold text-decoration-underline text-uppercase text-reset fs-12">Coderthemes</span>
+                    <script>document.write(new Date().getFullYear())</script>
+                    &copy; <span class="fw-bold text-uppercase text-reset fs-12">ICSSF</span>
                 </p>
             </div>
         </div>
     </div>
-
-
-    
 @endsection

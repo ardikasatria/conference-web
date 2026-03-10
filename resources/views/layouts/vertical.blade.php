@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" @yield('html_attribute')>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" @yield('html_attribute')>
 
 <head>
     @include('layouts.partials/title-meta')
 
     @yield('css')
 
-    <!-- Adminto Admin Theme CSS (pre-built) -->
+    <!-- Theme CSS -->
     <link href="/build/assets/app-BuwIqzw9.css" rel="stylesheet">
     <link href="/build/assets/icons-r6laq6CU.css" rel="stylesheet">
 </head>
@@ -34,10 +34,10 @@
 
     @include('layouts.partials/customizer')
 
-    <!-- Adminto Theme Config -->
+    <!-- Theme Config -->
     <script src="/build/assets/config-LSYrJu-Q.js"></script>
 
-    <!-- Adminto App JS -->
+    <!-- Theme App JS -->
     <script src="/build/assets/app-C5utzVIa.js"></script>
 
     @yield('scripts')
