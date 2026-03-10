@@ -15,6 +15,36 @@ class RoutingController extends Controller
         return Inertia::render('Home');
     }
 
+    public function committee(Request $request)
+    {
+        // Serve Committee page
+        return Inertia::render('Committee');
+    }
+
+    public function schedule(Request $request)
+    {
+        // Serve Schedule page
+        return Inertia::render('Schedule');
+    }
+
+    public function information(Request $request)
+    {
+        // Serve Information/FAQ page
+        return Inertia::render('FaqPage');
+    }
+
+    public function program(Request $request)
+    {
+        // Serve Program page
+        return Inertia::render('Program');
+    }
+
+    public function author(Request $request)
+    {
+        // Serve Author page
+        return Inertia::render('Author');
+    }
+
     public function root(Request $request, $first)
     {
         return Inertia::render('Home');

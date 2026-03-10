@@ -10,6 +10,8 @@ class Session extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'conference_sessions';
+
     protected $fillable = [
         'conference_id',
         'title',

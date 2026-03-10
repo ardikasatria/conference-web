@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('registration_sessions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('registration_id')->constrained('registrations')->onDelete('cascade');
-            $table->foreignId('session_id')->constrained('sessions')->onDelete('cascade');
+            $table->foreignId('session_id')->constrained('conference_sessions')->onDelete('cascade');
             $table->enum('attendance_status', ['registered', 'attended', 'absent'])->default('registered');
             $table->timestamps();
             
