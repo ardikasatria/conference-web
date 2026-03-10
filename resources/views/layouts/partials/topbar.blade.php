@@ -6,13 +6,13 @@
             <!-- Brand Logo -->
             <a href="{{ route('home') }}" class="logo">
                 <span class="logo-light">
-                    <span class="logo-lg"><img src="/images/logo.png" alt="logo"></span>
-                    <span class="logo-sm"><img src="/images/logo-sm.png" alt="small logo"></span>
+                    <span class="logo-lg"><img src="/images/logo.png" alt="ICSSF"></span>
+                    <span class="logo-sm"><img src="/images/logo-sm.png" alt="ICSSF"></span>
                 </span>
 
                 <span class="logo-dark">
-                    <span class="logo-lg"><img src="/images/logo-dark.png" alt="dark logo"></span>
-                    <span class="logo-sm"><img src="/images/logo-sm.png" alt="small logo"></span>
+                    <span class="logo-lg"><img src="/images/logo-dark.png" alt="ICSSF"></span>
+                    <span class="logo-sm"><img src="/images/logo-sm.png" alt="ICSSF"></span>
                 </span>
             </a>
 
@@ -59,32 +59,55 @@
                 </button>
             </div>
 
+            <!-- Fullscreen Button -->
+            <div class="topbar-item d-none d-md-flex">
+                <button class="topbar-link" data-toggle="fullscreen" type="button">
+                    <i class="ri-fullscreen-line fs-22"></i>
+                </button>
+            </div>
+
             <!-- User Dropdown -->
             <div class="topbar-item nav-user">
                 <div class="dropdown">
                     <a class="topbar-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown"
                         data-bs-offset="0,25" type="button" aria-haspopup="false" aria-expanded="false">
-                        <div class="rounded-circle d-inline-flex align-items-center justify-content-center bg-primary text-white me-lg-2" style="width:32px;height:32px;">
-                            <span class="fw-bold" style="font-size:13px;">{{ strtoupper(substr(auth()->user()->name ?? 'U', 0, 2)) }}</span>
+                        @php $topbarUser = auth()->user(); @endphp
+                        <div class="rounded-circle d-inline-flex align-items-center justify-content-center bg-primary bg-gradient text-white me-lg-2" style="width:32px;height:32px;">
+                            <span class="fw-bold" style="font-size:13px;">{{ strtoupper(substr($topbarUser->name ?? 'U', 0, 2)) }}</span>
                         </div>
                         <span class="d-lg-flex flex-column gap-1 d-none">
-                            <h5 class="my-0">{{ auth()->user()->name ?? 'User' }}</h5>
+                            <h5 class="my-0">{{ $topbarUser->name ?? 'User' }}</h5>
+                            <span class="fs-12 text-muted">
+                                @if($topbarUser?->hasRole('admin'))
+                                    Admin
+                                @elseif($topbarUser?->hasRole('reviewer'))
+                                    Reviewer
+                                @else
+                                    Participant
+                                @endif
+                            </span>
                         </span>
                         <i class="ri-arrow-down-s-line d-none d-lg-block align-middle ms-1"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end">
                         <!-- item-->
                         <div class="dropdown-header noti-title">
-                            <h6 class="text-overflow m-0">Welcome!</h6>
+                            <h6 class="text-overflow m-0">Welcome, {{ Str::words($topbarUser->name ?? 'User', 1, '') }}!</h6>
                         </div>
 
-                        <!-- item-->
+                        <!-- Profile -->
+                        <a href="{{ route('profile.show') }}" class="dropdown-item">
+                            <i class="ri-account-circle-line me-1 fs-16 align-middle"></i>
+                            <span class="align-middle">My Profile</span>
+                        </a>
+
+                        <!-- Dashboard -->
                         <a href="{{ route('dashboard') }}" class="dropdown-item">
                             <i class="ri-dashboard-line me-1 fs-16 align-middle"></i>
                             <span class="align-middle">Dashboard</span>
                         </a>
 
-                        <!-- item-->
+                        <!-- Visit Website -->
                         <a href="{{ route('home') }}" class="dropdown-item">
                             <i class="ri-global-line me-1 fs-16 align-middle"></i>
                             <span class="align-middle">Visit Website</span>
@@ -92,7 +115,7 @@
 
                         <div class="dropdown-divider"></div>
 
-                        <!-- item-->
+                        <!-- Sign Out -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button type="submit" class="dropdown-item text-danger">

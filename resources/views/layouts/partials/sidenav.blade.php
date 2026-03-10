@@ -4,13 +4,13 @@
     <!-- Brand Logo -->
     <a href="{{ route('home') }}" class="logo">
         <span class="logo-light">
-            <span class="logo-lg"><img src="/images/logo.png" alt="logo"></span>
-            <span class="logo-sm"><img src="/images/logo-sm.png" alt="small logo"></span>
+            <span class="logo-lg"><img src="/images/logo.png" alt="ICSSF"></span>
+            <span class="logo-sm"><img src="/images/logo-sm.png" alt="ICSSF"></span>
         </span>
 
         <span class="logo-dark">
-            <span class="logo-lg"><img src="/images/logo-dark.png" alt="dark logo"></span>
-            <span class="logo-sm"><img src="/images/logo-sm.png" alt="small logo"></span>
+            <span class="logo-lg"><img src="/images/logo-dark.png" alt="ICSSF"></span>
+            <span class="logo-sm"><img src="/images/logo-sm.png" alt="ICSSF"></span>
         </span>
     </a>
 
@@ -60,6 +60,10 @@
                     <div class="dropdown-header noti-title">
                         <h6 class="text-overflow m-0">Welcome!</h6>
                     </div>
+                    <a href="{{ route('profile.show') }}" class="dropdown-item">
+                        <i class="ri-account-circle-line me-1 fs-16 align-middle"></i>
+                        <span class="align-middle">My Profile</span>
+                    </a>
                     <a href="{{ route('dashboard') }}" class="dropdown-item">
                         <i class="ri-dashboard-line me-1 fs-16 align-middle"></i>
                         <span class="align-middle">My Dashboard</span>
@@ -245,7 +249,7 @@
             </li>
 
             <li class="side-nav-item">
-                <a href="{{ route('reviewer.assigned-papers') }}" class="side-nav-link">
+                <a href="{{ route('reviewer.assigned-papers.index') }}" class="side-nav-link">
                     <span class="menu-icon"><i class="ti ti-file-search"></i></span>
                     <span class="menu-text"> Assigned Papers </span>
                 </a>

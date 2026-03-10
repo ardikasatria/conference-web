@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" @yield('html_attribute')>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-bs-theme="light" data-layout-mode="fluid" data-topbar-color="light" data-menu-color="dark" data-sidenav-size="default">
 
 <head>
     @include('layouts.partials/title-meta')
@@ -37,8 +37,8 @@
     <!-- Theme Config -->
     <script src="/build/assets/config-LSYrJu-Q.js"></script>
 
-    <!-- Theme App JS -->
-    <script src="/build/assets/app-C5utzVIa.js"></script>
+    <!-- Theme App JS (ES module - loads jQuery, Bootstrap, Simplebar, etc.) -->
+    <script type="module" src="/build/assets/app-C5utzVIa.js"></script>
 
     @yield('scripts')
 
